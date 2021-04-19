@@ -22,7 +22,7 @@ class Unet(nn.Module):
         self.upconv_3 = up_conv(128+64, 64, scale=4)
 
         self.last_conv = nn.Conv2d(64+3, 3, kernel_size=(3,3), padding=1)
-                                          
+
     def forward(self, input):
         out1 = self.enc_b1(input)
         out2 = self.enc_b2(out1)
